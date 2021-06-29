@@ -316,6 +316,8 @@
         </form>
   </form>
         <table>
+        @csrf
+
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
