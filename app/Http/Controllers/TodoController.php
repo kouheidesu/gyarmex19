@@ -14,9 +14,9 @@ class TodoController extends Controller
     }
     public function post(Request $request)
     {
-        $_token=$request->content;
+        $content=$request->content;
         $data=[
-            'content'=>$_token
+            'content'=>$content
         ];
         return view('todo.index',$data);
     }
@@ -58,4 +58,3 @@ class TodoController extends Controller
         return redirect()->route('todo.index');
     }
 }
-
