@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        $chema::create('users',function(Blueprint $table){
+        $chema::create('todo',function(Blueprint $table){
             $table->id();
             $table->string("name");
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('todo');
     }
 }
