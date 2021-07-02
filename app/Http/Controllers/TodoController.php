@@ -15,7 +15,7 @@ class TodoController extends Controller
         ];
         return view('todo.index', $data);
     }
-    public function post(Request $request)
+    public function create(Request $request)
     {
         $content = $request->content;
         $data = [
@@ -24,7 +24,7 @@ class TodoController extends Controller
         return view('todo.index', $data);
     }
 
-    public function create(Request $request)
+    public function hello(Request $request)
     {
             $request->validate([
                 'newTodo' => 'required|max:20',
