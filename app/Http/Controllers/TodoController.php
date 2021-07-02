@@ -30,7 +30,7 @@ class TodoController extends Controller
                 'newTodo' => 'required|max:20',
                 'newDeadline' => 'nullable|after:"now',
             ]);
-            Todo::crate([
+            Todo::create([
                 'todo' =>$request->newTodo,
                 'deadline'=>$request->newDeadline,
             ]);
