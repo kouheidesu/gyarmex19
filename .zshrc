@@ -1,2 +1,3 @@
-export PATH=$PATH:/Applications/MAMP/Library/bin
+export PATH="$PATH:/Applications/MAMP/Library/bin"
+
 
