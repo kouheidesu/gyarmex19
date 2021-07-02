@@ -15,11 +15,9 @@ class CreateTodoTable extends Migration
     {
         Schema::create('todo', function (Blueprint $table) {
             $table->id();
-            $table->string();
             $table->timestamps();
-            $table->text();
-            $table->timestamp();
-            $table->datatime();
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
 
