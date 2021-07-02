@@ -15,10 +15,10 @@ class CreateTodoTable extends Migration
     {
         Schema::create('todo', function (Blueprint $table) {
             $table->id();
-            $table->content();
+            $table->string();
             $table->timestamps();
-            $table->data();
-            $table->request();
+            $table->text();
+            $table->timestamp();
         });
     }
 
