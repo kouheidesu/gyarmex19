@@ -17,6 +17,8 @@ class CreateTodoTable extends Migration
             $table->id();
             $table->content();
             $table->timestamps();
+            $table->data();
+            $table->request();
         });
     }
 
