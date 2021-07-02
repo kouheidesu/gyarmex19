@@ -19,6 +19,7 @@ class CreateTodoTable extends Migration
             $table->timestamps();
             $table->text();
             $table->timestamp();
+            $table->datatime();
         });
     }
 
