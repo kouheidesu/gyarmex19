@@ -32,5 +32,3 @@ class CreateTodoTable extends Migration
         Schema::dropIfExists('todo');
     }
 }
-
-

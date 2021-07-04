@@ -11,7 +11,7 @@ class Todo extends Model
     protected $fillable=['text'];
     public static $rules = array(
         'text'=>'integer|min:0|max:20',
-    )
+    );
     public function getData(){
         return $this->text;
     }
