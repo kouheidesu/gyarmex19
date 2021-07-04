@@ -13,7 +13,7 @@ class Todo extends Model
         'text'=>'integer|min:0|max:20',
     )
     public function getData(){
-        return $this->text.
+        return $this->text;
     }
 }
 
