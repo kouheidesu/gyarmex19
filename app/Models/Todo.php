@@ -12,8 +12,8 @@ class Todo extends Model
     public static $rules = array(
         'text'=>'integer|min:0|max:20',
     )
-    public functions getData(){
-        return $this->text;
+    public function getData(){
+        return $this->text.
     }
 }
 
