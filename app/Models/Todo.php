@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
+    protected $fillable=['text'];
+    public static $rules = array(
+        'text'=>'integer|min:0|max:20',
+    )
+    public functions getData(){
+        return $this->text;
+    }
 }
+

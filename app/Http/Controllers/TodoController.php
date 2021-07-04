@@ -10,18 +10,22 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $data = [
-            'content' => '自由に入力してください',
-        ];
-        return view('todo.index', $data);
+        
+        return view('/todo.index');
     }
+
+    public function add(Request $request)
+    {
+        return view('/todo/create.index');
+    }
+
     public function create(Request $request)
     {
-        $content = $request->content;
-        $data = [
-            'content' => $content . 'と入力しましたね'
-        ];
-        return view('todo.index', $data);
+        $this->validate($request, Todo::$rules);
+        $form = $request->all();
+        Todo::create($form);
+        return redirect('/todo/create.index');
+
     }
 
     public function hello(Request $request)
