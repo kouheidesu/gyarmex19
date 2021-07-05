@@ -16,7 +16,7 @@ class TodoController extends Controller
 
     public function add(Request $request)
     {
-        return view('/todo/create.index');
+        return view('/todo/add.index');
     }
 
     public function create(Request $request)
