@@ -312,7 +312,7 @@
             <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
         @csrf
-          <input type="hidden" name="content" value="1c3ssmbmcAfo6tfA0bVGscijjhOxwOcNiZu3vM3A">          <input type="text" class="input-add" name="content" />
+                 <input type="text" class="input-add" name="content" />
           <input class="button-add" type="submit" value="追加" />
         </form>
   
