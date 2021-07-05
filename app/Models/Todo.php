@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
-    protected $fillable=['text','created_at','updated_at'];
+    protected $fillable=['content','created_at','updated_at'];
     public static $rules = array(
-        'text'=>'integer|min:0|max:20',
+        'content'=>'integer|min:0|max:20',
+        'created_at'=>'integer|min:0|max:20',
+        'updated_at'=>'integer|min:0|max:20',
     );
     public function getData(){
-        return $this->text;
+        return $this->text. ':' . $this->created_at. '(' . $this->updated_at . ')';
     }
 }
 
