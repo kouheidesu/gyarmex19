@@ -18,4 +18,3 @@ class Todo extends Model
         return $this->text. ':' . $this->created_at. '(' . $this->updated_at . ')';
     }
 }
-
