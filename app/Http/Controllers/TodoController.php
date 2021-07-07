@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         
         return view('/todo.index');
@@ -16,7 +16,7 @@ class TodoController extends Controller
 
     public function add(Request $request)
     {
-        return view('/todo/creat');
+        return view('/todo/create');
     }
 
     public function create(Request $request)
@@ -27,6 +27,8 @@ class TodoController extends Controller
         return redirect('/');
 
     }
+
+   
 
     public function hello(Request $request)
     {

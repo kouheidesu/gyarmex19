@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
-    protected $fillable=['content'];
+    protected $fillable=['content','created_at','updated_at'];
     public static $rules = array(
         'content'=>'required|min:0|max:20',
        
