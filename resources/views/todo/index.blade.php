@@ -318,8 +318,20 @@
         </form>
   
         <table>
-       
+        @section('title', 'index.blade.php')
 
+@section('content')
+<>
+  <tr>
+    <th>Data</th>
+  </tr>
+  @foreach ($items as $item)
+  <tr>
+    <td>
+      {{$item->getData()}}
+    </td>
+  </tr>
+  @endforeach
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
@@ -327,6 +339,7 @@
             <th>削除</th>
           </tr>
         </table>
+        @endsection 
         </div>
         </div>
         </div>
