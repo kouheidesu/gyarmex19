@@ -13,7 +13,11 @@ class Todo extends Model
         'content'=>'required|min:0|max:20',
        
     );
-    public function getData(){
-        return $this->text. ':' . $this->created_at. '(' . $this->updated_at . ')';
+    public function getData()
+    {
+        $txt = $this->text. ':' . $this->created_at . '(' . $this->updated_at . ')';
+        return $txt;
     }
 }
+
+

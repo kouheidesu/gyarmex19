@@ -310,7 +310,7 @@
     <div class="card">
       <p class="title mb-15">Todo List</p>
             <div class="todo">
-        <form action="/" method="post" class="flex between mb-30">
+        <form action="/todo/create" method="post" class="flex between mb-30">
         @csrf
         
                <input type="text" class="input-add" name="content" />
