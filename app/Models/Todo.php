@@ -11,13 +11,14 @@ class Todo extends Model
     protected $fillable=['content','created_at','updated_at'];
     public static $rules = array(
         'content'=>'required|min:0|max:20',
-       
     );
     public function getData()
     {
-        $txt = $this->text. ':' . $this->created_at . '(' . $this->updated_at . ')';
-        return $txt;
+        return $this->text. ':' . $this->created_at . '(' . $this->updated_at . ')';
+        
     }
 }
+
+
 
 
