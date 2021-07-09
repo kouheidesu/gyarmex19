@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/reset.css">
   <title>COACHTECH</title>
   <style>
+
+
     html,
     body,
     div,
@@ -301,6 +303,8 @@
       border-color: #71fadc;
       color: #fff;
     }
+
+    
   </style>
 </head>
 
@@ -316,24 +320,20 @@
                <input type="text" class="input-add" name="content" />
           <input class="button-add" type="submit" value="追加" />
         </form>
-  
-@section('title','index.blade.php')
-
-@section('content')
-  
-        <table>
-        @foreach ($items as $items)
-  <tr>
-  <td>
-  {{$item->getData()}}</td></tr>
-  @endforeach
+      
+<table>
+@foreach($items as $item)
+<tr>
+<td>
+{{$item->getData()}}</td></tr>
             <th>作成日</th>
             <th>タスク名</th>
             <th>更新</th>
             <th>削除</th>
           </tr>
+          @endforeach
         </table>
-        @endsection
+   
         </div>
         </div>
         </div>
