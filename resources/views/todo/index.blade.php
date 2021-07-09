@@ -317,16 +317,23 @@
           <input class="button-add" type="submit" value="追加" />
         </form>
   
+@section('title','index.blade.php')
 
+@section('content')
   
         <table>
- 
+        @foreach ($items as $items)
+  <tr>
+  <td>
+  {{$item->getData()}}</td></tr>
+  @endforeach
             <th>作成日</th>
             <th>タスク名</th>
             <th>更新</th>
             <th>削除</th>
           </tr>
         </table>
+        @endsection
         </div>
         </div>
         </div>
