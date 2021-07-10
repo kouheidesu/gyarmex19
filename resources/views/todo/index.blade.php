@@ -326,7 +326,16 @@
         </form>
 
 <table>
-@foreach($items as $item)
+
+
+</tr>
+            <th>作成日</th>
+            <th>タスク名</th>
+            <th>更新</th>
+            <th>削除</th>
+      
+            @foreach($items as $item)
+            
 <tr>
 <td>
 {{$item->created_at}}
@@ -335,22 +344,19 @@
 {{$item->content}}
 </td>
 
-</tr>
-            <th>作成日</th>
-            <th>タスク名</th>
-            <th>更新</th>
-            <th>削除</th>
-  
-
           @endforeach
+          
         </table>
-      
-        </div>
-        </div>
-        </div>
-
+        <td>
         <input class="button-update" type="submit" value="更新" />
-          <input class="button-delete" type="submit" value="削除" />
+        </td>
+        <td>
+        <input class="button-delete" type="submit" value="削除" />
+        </td>
+          
+        </div>
+        </div>
+        </div>
         </body>
         </html>
 
