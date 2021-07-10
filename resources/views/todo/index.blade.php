@@ -318,9 +318,12 @@
         @csrf
         
                <input type="text" class="input-add" name="content" />
-          <input class="button-add" type="submit" value="追加" />
+          
+          <input class="button-update" type="submit" value="更新" />
+          
         </form>
-      
+        <input class="button-delete" type="submit" value="削除" />
+        <input class="button-add" type="submit" value="追加" />
 <table>
 @foreach($items as $item)
 <tr>
@@ -345,3 +348,12 @@
         </div>
         </body>
         </html>
+
+        
+
+
+
+
+
+
+        
