@@ -316,14 +316,15 @@
             <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
         @csrf
+
+        
         
                <input type="text" class="input-add" name="content" />
+          <input class="button-add" type="submit" value="追加" />
           
-          <input class="button-update" type="submit" value="更新" />
-          
+           
         </form>
-        <input class="button-delete" type="submit" value="削除" />
-        <input class="button-add" type="submit" value="追加" />
+
 <table>
 @foreach($items as $item)
 <tr>
@@ -340,12 +341,16 @@
             <th>更新</th>
             <th>削除</th>
   
+
           @endforeach
         </table>
       
         </div>
         </div>
         </div>
+
+        <input class="button-update" type="submit" value="更新" />
+          <input class="button-delete" type="submit" value="削除" />
         </body>
         </html>
 
