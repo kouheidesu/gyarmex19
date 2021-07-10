@@ -14,7 +14,7 @@ class Todo extends Model
     );
     public function getData()
     {
-        return $this->text. ':' . $this->created_at . '(' . $this->updated_at . ')';
+        return $this->content . ':' . $this->created_at . '(' . $this->updated_at . ')';
         
     }
 }

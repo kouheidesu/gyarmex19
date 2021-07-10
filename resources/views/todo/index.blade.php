@@ -325,7 +325,7 @@
 @foreach($items as $item)
 <tr>
 <td>
-{{$item->getData()}}</td></tr>
+{{$item}}</td></tr>
             <th>作成日</th>
             <th>タスク名</th>
             <th>更新</th>
@@ -333,7 +333,7 @@
           </tr>
           @endforeach
         </table>
-   
+      
         </div>
         </div>
         </div>
