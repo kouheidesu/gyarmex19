@@ -325,11 +325,12 @@
 @foreach($items as $item)
 <tr>
 <td>
-{{$item->hour}}
+{{$item->created_at}}
 </td>
 <td>
 {{$item->content}}
 </td>
+
 </tr>
             <th>作成日</th>
             <th>タスク名</th>
