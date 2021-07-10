@@ -342,17 +342,18 @@
 </td>
 <td>
 {{$item->content}}
-</td>
 
+<input type="text" class="input-update" value="" name="content">
+</td>
+<td>
+<button class="button-update">更新</button>
+</td>
+<td>
+<button class="button-delete">削除</button>
+</td>
           @endforeach
           
         </table>
-        <td>
-        <input class="button-update" type="submit" value="更新" />
-        </td>
-        <td>
-        <input class="button-delete" type="submit" value="削除" />
-        </td>
           
         </div>
         </div>
