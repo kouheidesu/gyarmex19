@@ -41,6 +41,6 @@ class TodoController extends Controller
     {
         $todo = Todo::find($request->id);
 
-        return redirect()->route('todo.index');
+        return redirect('/');
     }
 }

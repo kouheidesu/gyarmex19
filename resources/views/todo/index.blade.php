@@ -327,23 +327,25 @@
               {{$item->created_at}}
             </td>
             <td>
-              {{$item->content}}
-              <input type="text" name="name">
+              <form action="todo/create" method="post">
+                @csrf
+                <input type="text" class="input-update" name="content" value=" {{$item->content}}">
             </td>
             <td>
               <form action="todo/update" method="post">
                 @csrf
+                <input type="hidden" name="update" value="{{$item->getData()}}">
                 <button type="submit" class="button-update" name="update">更新</button>
               </form>
             </td>
             <td>
-              <form action="todo/delete" method="post">
+              <form action="todo/delete/{id}" method="POST">
                 @csrf
                 <input type="hidden" name="id" value="{{$item->getData()}}">
-                <button type="submit" class="button-delete" name="delete">削除</button>
+                <button type="submit" class="button-delete">削除</button>
               </form>
-
-              @endforeach
+            </td>
+            @endforeach
         </table>
       </div>
     </div>
