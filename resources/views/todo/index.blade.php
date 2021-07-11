@@ -294,8 +294,6 @@
       cursor: pointer;
       transition: 0.4s;
       outline: none;
-
-      リアyラウおあ
     }
 
     .button-delete:hover {
@@ -341,13 +339,11 @@
             <td>
               <form action="todo/delete" method="post">
                 @csrf
+                <input type="hidden" name="id" value="{{$item->getData()}}">
                 <button type="submit" class="button-delete" name="delete">削除</button>
-            <td>
-              {{$item->getData()}}
-            </td>
-            </form>
+              </form>
 
-            @endforeach
+              @endforeach
         </table>
       </div>
     </div>

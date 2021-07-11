@@ -35,7 +35,7 @@ class TodoController extends Controller
         $todo->todo = $request->updateTodo;
         $todo->deadline = $request->updateDeadline;
         $todo->save();
-        return redirect()->route('todo.index');
+        return redirect()->route('todo/update');
     }
     public function delete(Request $request)
     {
