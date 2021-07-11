@@ -335,12 +335,12 @@
             <td>
               <form action="todo/update" method="post">
                 @csrf
-                <input type="hidden" name="update" value="{{$item->getData()}}">
+                <input type="hidden" name="id" value="{{$item->getData()}}">
                 <button type="submit" class="button-update" name="update">更新</button>
               </form>
             </td>
             <td>
-              <form action="todo/delete/{id}" method="POST">
+              <form action="todo/delete/{id}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$item->getData()}}">
                 <button type="submit" class="button-delete">削除</button>

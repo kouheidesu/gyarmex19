@@ -35,12 +35,11 @@ class TodoController extends Controller
         $todo->todo = $request->updateTodo;
         $todo->deadline = $request->updateDeadline;
         $todo->save();
-        return redirect()->route('todo/update');
+        return redirect()->route('/');
     }
     public function delete(Request $request)
     {
         $todo = Todo::find($request->id);
-
-        return redirect('/');
+        return view('todo/delete', ['form' => $todo]);
     }
 }
