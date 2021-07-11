@@ -11,14 +11,11 @@ class TodoController extends Controller
 {
     public function index(Request $request)
     {
-        $items=Todo::all();
-        return view('todo.index',['items'=>$items]);
+        $items = Todo::all();
+        return view('todo.index', ['items' => $items]);
     }
 
-    public function add(Request $request)
-    {
-        return view('/todo/create');
-    }
+
 
     public function create(Request $request)
     {
@@ -26,45 +23,24 @@ class TodoController extends Controller
         $form = $request->all();
         Todo::create($form);
         return redirect('/');
-
     }
 
-   
-
-    public function hello(Request $request)
+    public function update(Request $request)
     {
-            $request->validate([
-                'newTodo' => 'required|max:20',
-                'newDeadline' => 'nullable|after:"now',
-            ]);
-            Todo::create([
-                'todo' =>$request->newTodo,
-                'deadline'=>$request->newDeadline,
-            ]);
-
-            return view('todo.index');
-        }
-
-
-    
-    public function update(Request $request, $id)
-    {
-        $request-validate([
-            'updateTodo' =>'required|max:20',
-            'updateDeadline' =>'nullable|after:"now"',
+        $request->validate([
+            'updateTodo' => 'required|max:20',
+            'updateDeadline' => 'nullable|after:"now"',
         ]);
-        $todo = Todo::find($id);
+        $todo = Todo::find($request->id);
         $todo->todo = $request->updateTodo;
         $todo->deadline = $request->updateDeadline;
         $todo->save();
-        return redirect()->route('todo.index'); 
-        
-    }               
-    public function delete($id)
+        return redirect()->route('todo.index');
+    }
+    public function delete(Request $request)
     {
-        $todo=Todo::find($id);
-        $todo->delete();
+        $todo = Todo::find($request->id);
+
         return redirect()->route('todo.index');
     }
 }
-

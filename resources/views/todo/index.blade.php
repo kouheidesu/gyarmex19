@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="css/reset.css">
   <title>COACHTECH</title>
   <style>
-
-
     html,
     body,
     div,
@@ -296,6 +294,8 @@
       cursor: pointer;
       transition: 0.4s;
       outline: none;
+
+      リアyラウおあ
     }
 
     .button-delete:hover {
@@ -303,8 +303,6 @@
       border-color: #71fadc;
       color: #fff;
     }
-
-    
   </style>
 </head>
 
@@ -313,66 +311,47 @@
   <div class="container">
     <div class="card">
       <p class="title mb-15">Todo List</p>
-            <div class="todo">
+      <div class="todo">
         <form action="/todo/create" method="post" class="flex between mb-30">
-        @csrf
-
-        
-        
-               <input type="text" class="input-add" name="content" />
+          @csrf
+          <input type="text" class="input-add" name="content" />
           <input class="button-add" type="submit" value="追加" />
-          
-           
         </form>
+        <table>
+          </tr>
+          <th>作成日</th>
+          <th>タスク名</th>
+          <th>更新</th>
+          <th>削除</th>
+          @foreach($items as $item)
+          <tr>
+            <td>
+              {{$item->created_at}}
+            </td>
+            <td>
+              {{$item->content}}
+              <input type="text" name="name">
+            </td>
+            <td>
+              <form action="todo/update" method="post">
+                @csrf
+                <button type="submit" class="button-update" name="update">更新</button>
+              </form>
+            </td>
+            <td>
+              <form action="todo/delete" method="post">
+                @csrf
+                <button type="submit" class="button-delete" name="delete">削除</button>
+            <td>
+              {{$item->getData()}}
+            </td>
+            </form>
 
-<table>
-
-
-</tr>
-            <th>作成日</th>
-            <th>タスク名</th>
-            <th>更新</th>
-            <th>削除</th>
-      
-            @foreach($items as $item)
-            
-<tr>
-<td>
-{{$item->created_at}}
-</td>
-<td>
-{{$item->content}}
-<input type="text" name="name" >
-</td>
-<td>
-<form action="todo/update" method="post">
-<button type="submit" class="button-update" name="update">更新</button>
-</form>
-</td>
-<td>
-<form action="todo/delete" method="post">
-<button type="submit" class="button-delete" name="delete">削除</button> 
-  </form>
-</form>
-
-
-
-
-          @endforeach
-          
+            @endforeach
         </table>
-          
-        </div>
-        </div>
-        </div>
-        </body>
-        </html>
+      </div>
+    </div>
+  </div>
+</body>
 
-        
-
-
-
-
-
-
-        
+</html>
