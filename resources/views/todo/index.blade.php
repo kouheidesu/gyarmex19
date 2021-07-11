@@ -329,14 +329,15 @@
             <td>
               <form action="todo/create/{content}" method="post">
                 @csrf
-                <input type="text" name="content" class="input-update" value=" {{$item->content}}">
+
+                <input type="text" name="content" class="input-update" value="{{$item->content}}">
               </form>
             </td>
             <td>
               <form action="todo/update" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{$item->getData()}}">
-                <button type="submit" class="button-update" name="update">更新</button>
+                <button type="checkbox" class="button-update" name="update">更新</button>
               </form>
             </td>
             <td>
