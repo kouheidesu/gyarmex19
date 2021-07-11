@@ -327,7 +327,7 @@
               {{$item->created_at}}
             </td>
             <td>
-              <form action="todo/create" method="post">
+              <form action="todo/create/{content}" method="post">
                 @csrf
                 <input type="text" name="content" class="input-update" value=" {{$item->content}}">
               </form>

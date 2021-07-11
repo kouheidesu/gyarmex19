@@ -14,7 +14,7 @@ class Todo extends Model
     );
     public function getData()
     {
-        $txt = $this->id;
+        $txt = $this->id . ';' . $this->content . ;
         return $txt;
     }
 }
