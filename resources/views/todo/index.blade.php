@@ -329,7 +329,8 @@
             <td>
               <form action="todo/create" method="post">
                 @csrf
-                <input type="text" class="input-update" name="content" value=" {{$item->content}}">
+                <input type="text" name="content" class="input-update" value=" {{$item->content}}">
+              </form>
             </td>
             <td>
               <form action="todo/update" method="post">
