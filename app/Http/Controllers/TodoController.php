@@ -14,9 +14,6 @@ class TodoController extends Controller
         $items = Todo::all();
         return view('todo.index', ['items' => $items]);
     }
-
-
-
     public function create(Request $request)
     {
         $this->validate($request, Todo::$rules);
@@ -24,18 +21,14 @@ class TodoController extends Controller
         Todo::create($form);
         return redirect('/');
     }
-
     public function update(Request $request)
     {
         $request->validate([
             'updateTodo' => 'required|max:20',
             'updateDeadline' => 'nullable|after:"now"',
         ]);
-        $todo = Todo::find($request->id);
-        $todo->todo = $request->updateTodo;
-        $todo->deadline = $request->updateDeadline;
-        $todo->save();
-        return redirect()->route('/');
+        $todo->content = $request->content;
+        return redirect('/');
     }
     public function delete(Request $request)
     {

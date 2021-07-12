@@ -316,28 +316,25 @@
           <input class="button-add" type="submit" value="追加" />
         </form>
         <table>
-          </tr>
-          <th>作成日</th>
-          <th>タスク名</th>
-          <th>更新</th>
-          <th>削除</th>
-          @foreach($items as $item)
+          <tr>
+            <th>作成日</th>
+            <th>タスク名</th>
+            <th>更新</th>
+            <th>削除</th>
+            @foreach($items as $item)
           <tr>
             <td>
               {{$item->created_at}}
             </td>
             <td>
-              <form action="todo/update/{content}" method="post">
+              <form action="todo/update" method="post">
                 @csrf
 
                 <input type="text" name="content" class="input-update" value="{{$item->content}}">
-              </form>
             </td>
             <td>
-              <form action="todo/update/{content}" method="post">
-                @csrf
-                <input type="hidden" name="content" value="{{$item->content}}">
-                <button type="submit" class="button-update" name="update">更新</button>
+              <input type="hidden" name="id" value="{{$item->id}}">
+              <button type="submit" class="button-update" name="update">更新</button>
               </form>
             </td>
             <td>
