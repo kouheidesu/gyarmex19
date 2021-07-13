@@ -14,12 +14,6 @@ class TodoController extends Controller
         $items = Todo::all();
         return view('todo.index', ['items' => $items]);
     }
-    public function message()
-    {
-        return[
-            'titele.required'=>'''・The content field is required.'
-        ];
-    }
     public function create(Request $request)
     {
         $this->validate($request, Todo::$rules);
@@ -29,6 +23,7 @@ class TodoController extends Controller
     }
     public function update(Request $request)
     {
+        $this->validate($request, Todo::$rules);
         $todo = Todo::find($request->id);
         $todo->content = $request->content;
         $todo->save();
