@@ -31,6 +31,6 @@ class TodoController extends Controller
     public function delete(Request $request)
     {
         $todo = Todo::find($request->id);
-        return view('todo/delete/{id}', ['form' => $todo]);
+        return view('index', ['form' => $todo]);
     }
 }
