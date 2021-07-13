@@ -23,16 +23,14 @@ class TodoController extends Controller
     }
     public function update(Request $request)
     {
-        $request->validate([
-            'updateTodo' => 'required|max:20',
-            'updateDeadline' => 'nullable|after:"now"',
-        ]);
+        $todo = Todo::find($request->id);
         $todo->content = $request->content;
+        $todo->save();
         return redirect('/');
     }
     public function delete(Request $request)
     {
         $todo = Todo::find($request->id);
-        return view('/', ['form' => $todo]);
+        return view('todo/delete/{id}', ['form' => $todo]);
     }
 }

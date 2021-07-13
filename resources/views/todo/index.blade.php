@@ -329,7 +329,6 @@
             <td>
               <form action="todo/update" method="post">
                 @csrf
-
                 <input type="text" name="content" class="input-update" value="{{$item->content}}">
             </td>
             <td>
