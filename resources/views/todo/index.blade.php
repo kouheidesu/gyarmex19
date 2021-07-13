@@ -320,7 +320,8 @@
             <th>タスク名</th>
             <th>更新</th>
             <th>削除</th>
-            @foreach($items ?? '' as $item)
+
+            @foreach($items as $item)
           <tr>
             <td>
               {{$item->created_at}}
