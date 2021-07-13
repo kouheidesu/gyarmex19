@@ -305,7 +305,6 @@
 </head>
 
 <body>
-
   <div class="container">
     <div class="card">
       <p class="title mb-15">Todo List</p>
@@ -321,7 +320,7 @@
             <th>タスク名</th>
             <th>更新</th>
             <th>削除</th>
-            @foreach($items as $item)
+            @foreach($items ?? '' as $item)
           <tr>
             <td>
               {{$item->created_at}}
